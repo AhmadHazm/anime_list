@@ -1,9 +1,39 @@
-const api_url = "https://api.aniapi.com/v1/anime/"
+const api_url = "https://api.aniapi.com/v1/anime"
+
+let searchBar = document.querySelector("#searchBar")
+let searchBtn = document.querySelector("#searchBtn")
+searchBtn.addEventListener("click",()=>{
+    search()
+})
+
+// relod the page when click on header
+function relodPage(){
+    let cards = document.querySelectorAll(".card")
+    cards.forEach(e=>{
+        e.remove()
+    })
+
+    Featch("")
+}
+
+// search
+function search(){
+    let searchValue = searchBar.value
+    let regx = /\s/ig
+    searchValue = searchValue.replace(regx, "%20")
+
+    let cards = document.querySelectorAll(".card")
+    cards.forEach(e=>{
+        e.remove()
+    })
+
+    Featch("?title=" + searchValue)
+}
 
 // show cards when page loded
-addEventListener("load",pageLoded)
-function pageLoded(){
-    fetch(api_url).then(
+addEventListener("load",Featch(""))
+function Featch(requist){
+    fetch(api_url + requist).then(
         response => {
             if(response.ok)
                 return response.json()
@@ -12,9 +42,12 @@ function pageLoded(){
         }
     ).then(
         data => createCard(data.data.documents)
-    )
+    ).catch(error=>{
+        alert("something is wrong please try later")
+    })
 }
 
+// card class
 class card{
     constructor(data, title_max_length){
         this.data = data
@@ -64,11 +97,10 @@ class card{
     }
 }
 
-let cards = []
+// create card
 function createCard(data){
     data.forEach(cardData => {
         let c = new card(cardData, 20)
         c.createCard()
-        cards.push(c)
     });
 }
