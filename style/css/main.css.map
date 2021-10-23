@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AACA,AAAA,CAAC,AAAA,CACG,MAAM,CAAE,CAAC,CACT,OAAO,CAAE,CAAC,CACb,AAED,AAAA,IAAI,AAAA,CACA,gBAAgB,CCPD,OAAO,CDQtB,WAAW,CCJD,QAAQ,CAAE,UAAU,CDK9B,KAAK,CCNI,IAAO,CDOnB",
     "sources": [
-        "../sass/main.scss"
+        "../sass/main.scss",
+        "../sass/_config.scss"
     ],
     "names": [],
     "file": "main.css"
