@@ -9,3 +9,32 @@ body{
     font-family: $font-family;
     color: $text-color;
 }
+
+header{
+    width: 100vw;
+    text-align: center;
+    margin-top: 2em;
+
+    @include flex(column, center, 1em);
+    
+    div{
+        @include flex(row, center, .5em);
+        width: 60%;
+        max-width: 40em;
+
+        #searchBar{
+            padding: .5em 1.5em;
+            width: 100%;
+
+            border: none;
+            border-radius: 0;
+        }
+        #submit{
+            border: none;
+            border-radius: 0;
+            padding: .5em;
+            background-color: white;
+        }
+    }
+
+}

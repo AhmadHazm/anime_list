@@ -3,3 +3,13 @@ $background-color: #151515;
 // text
 $text-color: #ffffff;
 $font-family: 'Roboto', sans-serif;
+
+
+// mixin
+@mixin flex($direction: row, $align: left, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $align;
+    align-items: $align;
+    gap: $gap;
+}
