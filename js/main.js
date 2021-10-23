@@ -40,15 +40,14 @@ class card{
         // card html
         let card_html = `
             <div class="img-container">
-                <img class="img-card" src="${card_img_url}" alt="${card_title}">
+                <img class="card-img" src="${card_img_url}" alt="${card_title}">
             </div>
             <div class="card-info">
                 <ul class="info-1">
                     <li class="title">${card_title}</li>
-                    <li class="episotes-num">episotes: ${episodes_count}</li>
+                    <li class="episotes-num">ep: ${episodes_count}</li>
                 </ul>   
                 <ul class="info-2">
-                    <li class="card-info-text">Name: ${card_title}</li>
                     <li class="card-info-text">Start: ${start_date}</li>
                     <li class="card-info-text">End: ${end_date}</li>
                 </ul>

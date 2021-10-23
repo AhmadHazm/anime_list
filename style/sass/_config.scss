@@ -4,6 +4,11 @@ $background-color: #151515;
 $text-color: #ffffff;
 $font-family: 'Roboto', sans-serif;
 
+// card
+$card-img-width: 15em;
+$card-img-height: 20em;
+$card-info-background: #151515d4;
+$card-info-padding: .3em;
 
 // mixin
 @mixin flex($direction: row, $align: left, $gap: 0) {
