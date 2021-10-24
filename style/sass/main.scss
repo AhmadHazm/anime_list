@@ -126,7 +126,7 @@ header{
 
 // more info page
 .more_info_page{
-    @include flex(column, center, .5em);
+    @include flex(column, center, 2em);
  
     .get_home_btn{
         position: absolute;
@@ -167,4 +167,13 @@ header{
         max-height: 20em;    
     }
 
+}
+
+@media (max-width: 373px) {
+    .more_info_page{
+        .info{
+            @include flex(row, left, 2em);
+            padding-left: 2em;
+        }
+    }
 }
