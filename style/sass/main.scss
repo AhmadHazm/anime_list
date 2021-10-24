@@ -18,6 +18,23 @@ header{
 
     @include flex(column, center, 1em);
     
+    h1{
+        position: relative;
+        cursor: pointer;
+    }
+    h1::before{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 0;
+        height: 1px;
+        background-color: aquamarine;
+        transition: all .5s ease;
+    }
+    h1:hover::before{
+        width: 100%;
+    }
+
     div{
         @include flex(row, center, .5em);
         width: 60%;
