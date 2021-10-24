@@ -108,7 +108,7 @@ class card{
         this.episode_duration = this.data.episode_duration
 
         let more_info_page_code = `
-        <button class="get_home_btn">Home</button>
+        <button class="get_home_btn">Back</button>
         
         <img class="card-img" src="${this.banner_image}" alt="${this.card_title}">
         <h2>
@@ -145,10 +145,8 @@ class card{
             </ul>
         </div>        
         `
-        console.log(this.data.trailer_url)
         if(this.data.trailer_url != undefined)
             more_info_page_code += `<iframe class="iframe" src="${this.data.trailer_url}" frameborder="0" allowfullscreen></iframe>`
-        console.log(more_info_page_code)
         
 
         const main = document.querySelector("main")

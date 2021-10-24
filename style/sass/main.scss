@@ -1,16 +1,17 @@
 @import "./config";
 
+// resite
 *{
     margin: 0;
     padding: 0;
 }
-
 body{
     background-color: $background-color;
     font-family: $font-family;
     color: $text-color;
 }
 
+// header
 header{
     width: 95vw;
     text-align: center;
@@ -57,6 +58,7 @@ header{
 
 }
 
+// cards
 .cards-container{
     @include flex(row, center, 2em);
 
@@ -120,4 +122,49 @@ header{
             }
         }
     }
+}
+
+// more info page
+.more_info_page{
+    @include flex(column, center, .5em);
+ 
+    .get_home_btn{
+        position: absolute;
+        top: 2%;
+        left: 2%;
+        cursor: pointer;
+        
+        color: $text-color;
+        border: none;
+        background-color: $card-info-background;
+        font-size: .8rem;
+        padding: .5em 2em;
+    }
+
+    .card-img{
+        width: 100vw;
+        height: 30vh;
+        object-fit: cover;
+    }
+
+    .info{
+        @include flex(row, center, 2em);
+
+        flex-wrap: wrap;
+        .info-1, .info-2{
+            @include flex(column, left, .5em);
+
+            li{
+                list-style: none;
+            }
+        }
+    }
+    .iframe{
+        width: 30vw;
+        max-width: 30em;
+        min-width: 10em;
+        height: 30vh;    
+        max-height: 20em;    
+    }
+
 }
