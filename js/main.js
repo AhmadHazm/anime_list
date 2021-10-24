@@ -2,6 +2,11 @@ const api_url = "https://api.aniapi.com/v1/anime"
 
 let searchBar = document.querySelector("#searchBar")
 let searchBtn = document.querySelector("#searchBtn")
+
+searchBar.addEventListener("keydown",e=>{
+    if(e.key == "Enter")
+        search()
+})
 searchBtn.addEventListener("click",()=>{
     search()
 })
@@ -19,7 +24,8 @@ function Featch(requist){
     ).then(
         data => createCard(data.data.documents)
     ).catch(error=>{
-        alert("something is wrong please try later")
+        Featch("")
+        alert("didn't find any results")    
     })
 }
 
